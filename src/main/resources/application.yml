@@ -1,0 +1,21 @@
+
+spring:
+  name: referees
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring-security-roles-authorities-db
+    username: postgres
+    password: postgres
+    jpa:
+      hibernate:
+        ddl-auto: create-drop
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+      show-sql: true
+
+  liquibase.changeLog: classpath:db/changelog/master-changelog.xml
+
+
+logging.level.liquibase: INFO
