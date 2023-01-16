@@ -21,7 +21,7 @@ public class Authority {
     private String name;
 
     @Column(nullable = false)
-    private String role;
+    private boolean role;
 
     @ManyToMany(mappedBy = "authorities")
     private Set<User> users;
