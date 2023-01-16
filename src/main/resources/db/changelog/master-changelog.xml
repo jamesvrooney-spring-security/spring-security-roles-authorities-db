@@ -6,9 +6,9 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
 
 
-    <changeSet id="create-user-table" author="jamesrooney">
-        <createTable tableName="dog_user">
-            <column name="id" type="uuid">
+    <changeSet id="create-users-table" author="jamesvrooney">
+        <createTable tableName="users">
+            <column name="id" type="integer">
                 <constraints primaryKey="true"/>
             </column>
             <column name="username" type="varchar(32)">
@@ -20,7 +20,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="add-test-users" author="jamesrooney">
+    <changeSet id="add-test-users" author="jamesvrooney">
         <sqlFile path="db/changelog/sql/add-test-users.sql"/>
     </changeSet>
 </databaseChangeLog>

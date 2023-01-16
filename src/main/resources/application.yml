@@ -1,6 +1,7 @@
 
 spring:
-  name: referees
+  name: spring-security-users-roles-authorities
+  output.ansi.enabled: always
 
   datasource:
     url: jdbc:postgresql://localhost:5432/spring-security-roles-authorities-db
