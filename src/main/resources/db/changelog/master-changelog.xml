@@ -20,7 +20,36 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="create-authorities-table" author="jamesvrooney">
+        <createTable tableName="authorities">
+            <column name="id" type="integer">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-users-authorities-table" author="jamesvrooney">
+        <createTable tableName="users_authorities">
+            <column name="user_id" type="integer" />
+            <column name="authority_id" type="integer" />
+        </createTable>
+    </changeSet>
+
     <changeSet id="add-test-users" author="jamesvrooney">
         <sqlFile path="db/changelog/sql/add-test-users.sql"/>
+    </changeSet>
+
+    <changeSet id="add-test-authorities" author="jamesvrooney">
+        <sqlFile path="db/changelog/sql/add-test-authorities.sql"/>
+    </changeSet>
+
+    <changeSet id="add-test-users-authorities" author="jamesvrooney">
+        <sqlFile path="db/changelog/sql/add-test-users-authorities.sql"/>
     </changeSet>
 </databaseChangeLog>
